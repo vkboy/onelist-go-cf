@@ -1,4 +1,5 @@
 # OneList-Go-CF  基于Onelist-go 的cloudfoundry程序
+
 ## 鸣谢
  大佬 [Moeclub](https://github.com/MoeClub) 的 Onelist-go 项目:<br>
  [OneList - Written in GoLang](https://github.com/MoeClub/OneList/tree/master/Rewrite)<br>
@@ -12,64 +13,8 @@
 - 支持隐藏目录和文件(跳过缓存).
 - 数据储存在内存中,响应更加迅速.
 
+## Demo
+[https://onelist-cf.us-south.cf.appdomain.cloud/](https://onelist-cf.us-south.cf.appdomain.cloud/)
+
 ## 部署教程
-<预留>
-
-## 授权
-### 通过下面URL登录 (右键新标签打开)
-#### 国际版, 个人版(家庭版)
-[https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=78d4dc35-7e46-42c6-9023-2d39314433a5&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=78d4dc35-7e46-42c6-9023-2d39314433a5&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All)
-#### 中国版(世纪互联)
-[https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?client_id=dfe36e60-6133-48cf-869f-4d15b8354769&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All](https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?client_id=dfe36e60-6133-48cf-869f-4d15b8354769&response_type=code&redirect_uri=http://localhost/onedrive-login&response_mode=query&scope=offline_access%20User.Read%20Files.ReadWrite.All)
-
-## 添加配置文件
-```
-# 国际版
-OneList -a "url" -s "/onedrive01"
-# 个人版(家庭版)
-OneList -ms -a "url" -s "/onedrive02"
-# 中国版(世纪互联)
-OneList -cn -a "url" -s "/onedrive03"
-
-# 在浏览器地址栏中获取以 http://loaclhost 开头的整个url内容
-# 将获取的完整url内容替换命令中的 url 三个字母
-# 每次产生的 url 只能用一次, 重试请重新获取 url
-# 可以一个盘内的多个文件夹分别映射到多个`SubPath`上
-# 此操作将会自动添加的配置文件
-# 提示 Success! Add config. '/path/to/config.json' 则成功
-```
-
-## 修改配置文件
-```
-[
-  {
-    // 如果是家庭版或者个人免费版, 此项应为 true.
-    "MSAccount": false,
-    // 如果是中国版(世纪互联), 此项应为 true.
-    "MainLand": false,
-    // 授权令牌
-    "RefreshToken": "1234564567890ABCDEF",
-    // 单配置文件中,此项要唯一.将此OneDrive中设置为`RootPath`目录映射在`http://127.0.0.1:5288/onedrive` 下.
-    // (只推荐一个盘位的时候使用根目录"/".)
-    "SubPath": "/onedrive",
-    // 读取OneDrive的某个目录作为根目录. (支持根目录"/")
-    "RootPath": "/Test",
-    // 隐藏OneDrive目录中的文件夹和文件, 条目间使用 "|" 分割. (跳过缓存设置的条目.)
-    "HidePath": "/Test/Obj01|/Test/Obj02",
-    // 使用用户名和密码加密OneDrive目录. 目录和用户名密码间使用 "?" 分割, 用户名密码使用 ":" 分割, 条目间使用 "|" 分割. 无效条目将跳过. 
-    "AuthPath": "/Test/Auth01?user01:pwd01|/Test/Auth02?user02:pwd02",
-    // 缓存刷新间隔.(所有项目中的刷新时间取最小值为有效刷新间隔)
-    "RefreshInterval": 900
-  }
-]
-```
-
-## 使用
-
-
-## Client/Secret (~ 2299/12/31)
-```
-# 国际版: 78d4dc35-7e46-42c6-9023-2d39314433a5| ZudGl-p.m=LMmr3VrKgAyOf-WevB3p50
-# 中国版: dfe36e60-6133-48cf-869f-4d15b8354769| H0-1:6.Sb8:WCW/J-c]K@fddCt[i0EZ2
-# ReplyURL: http://localhost/onedrive-login
-```
+https://hexo.aragon.wang/2020/01/11/IBMCloud%E9%83%A8%E7%BD%B2OneList-Go/
